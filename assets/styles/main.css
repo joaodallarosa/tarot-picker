@@ -90,6 +90,7 @@ body {
   border-radius: var(--card-border-radius);
   pointer-events: none;
   transform-style: preserve-3d;
+  border: solid red 2px;
 }
 
 .taken-card-container {
