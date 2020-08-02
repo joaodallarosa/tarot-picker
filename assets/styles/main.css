@@ -212,9 +212,9 @@ body {
   } 
   51% {
     transform: translateZ(2rem) translateX(calc(var(--card-width) / 1.3)) rotate3d(0, 0, 1, var(--card-back-rotation)) rotate3d(1, 0, 0, 20deg)  rotate3d(0, 1, 0,-10deg);
-    z-index: 1;
+    z-index: 2;
   }
   to {
-    z-index: 1;
+    z-index: 2;
   }
 }
