@@ -108,6 +108,8 @@ body {
   z-index: 1;
   transition: transform 0.8s;
   transform-style: preserve-3d;
+  transform: translateZ(5rem);
+
 }
 
 /* This container is needed to position the front and back side */
@@ -210,7 +212,7 @@ body {
     z-index: 1;
   }
   to {
-    transform: translateZ(10px);
+    transform: translateZ(2rem);
     z-index: 1;
   }
 }
