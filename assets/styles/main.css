@@ -209,10 +209,10 @@ body {
     z-index: -1;
   } 
   51% {
+    transform: translateZ(2rem);
     z-index: 1;
   }
   to {
-    transform: translateZ(2rem);
     z-index: 1;
   }
 }
