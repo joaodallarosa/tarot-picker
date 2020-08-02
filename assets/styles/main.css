@@ -204,12 +204,12 @@ body {
 
   }
   50% {
-    transform: translateZ(-30px) translateX(calc(var(--card-width) / 1.3)) rotate3d(0, 0, 1, var(--card-back-rotation)) rotate3d(1, 0, 0, 20deg);
+    transform: translateZ(-30px) translateX(calc(var(--card-width) / 1.3)) rotate3d(0, 0, 1, var(--card-back-rotation)) rotate3d(1, 0, 0, 20deg)  rotate3d(0, 1, 0, -10deg);
     box-shadow: var(--deck-box-shadow);
     z-index: -1;
   } 
   51% {
-    transform: translateZ(2rem);
+    transform: translateZ(2rem) translateX(calc(var(--card-width) / 1.3)) rotate3d(0, 0, 1, var(--card-back-rotation)) rotate3d(1, 0, 0, 20deg)  rotate3d(0, 1, 0,-10deg);
     z-index: 1;
   }
   to {
