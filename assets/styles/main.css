@@ -1,7 +1,7 @@
 body {
   --deck-box-shadow: 5px 0 18px -10px #333;
   --back-card-box-shadow: 5px 0 8px -10px #333;
-  --animation-timing: 0.8s;
+  --animation-timing: 5.8s;
   --card-width: 300px;
   --card-height: 500px;
   --card-border-radius: 10px;
@@ -36,6 +36,8 @@ body {
   /* border: solid red 2px; */
   border: none;
   transform-style: preserve-3d;
+  transform: translateZ(0rem);
+
   /* z-index: 99; */
 }
 
@@ -200,7 +202,7 @@ body {
 @keyframes shuffle {
   from {
     box-shadow: var(--back-card-box-shadow);
-    transform: scale(0.8) translateZ(-30px);
+    transform: scale(0.6) translateZ(-30px);
 
   }
   50% {
