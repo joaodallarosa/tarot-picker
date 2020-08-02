@@ -11,6 +11,9 @@ document.addEventListener('DOMContentLoaded', function(){
   
   deckElem.addEventListener('click', function() {
     shuffle(tarot);
+    document.body.style.setProperty('--card-back-rotation', `${getRndInteger(-20, 20)}deg`);
+    document.body.style.setProperty('--deck-rotation', `${getRndInteger(-10, 10)}deg`);
+
     backCardElem.classList.add('animate');
     deckElem.classList.add('animate-deck');
 
@@ -89,7 +92,10 @@ document.addEventListener('DOMContentLoaded', function(){
     if (cardWidth > 300) cardWidth = 300;
     document.body.style.setProperty('--card-width', `${cardWidth}px`);
     document.body.style.setProperty('--card-height', `${cardWidth * 1.840}px`);
-    
+  }
+
+  function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min) ) + min;
   }
   // your code goes here
 }, false);
