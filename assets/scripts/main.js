@@ -8,6 +8,9 @@ document.addEventListener('DOMContentLoaded', function(){
   const takenCardsContainer = document.getElementById('taken-card-container');
   
   calcCardSize();
+
+  window.addEventListener("resize", calcCardSize);
+
   
   deckElem.addEventListener('click', function() {
     shuffle(tarot);
