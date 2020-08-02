@@ -89,6 +89,7 @@ body {
   background-repeat: no-repeat;
   border-radius: var(--card-border-radius);
   pointer-events: none;
+  transform-style: preserve-3d;
 }
 
 .taken-card-container {
