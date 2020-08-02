@@ -90,7 +90,6 @@ body {
   border-radius: var(--card-border-radius);
   pointer-events: none;
   transform-style: preserve-3d;
-  border: solid red 2px;
 }
 
 .taken-card-container {
@@ -205,16 +204,18 @@ body {
   from {
     box-shadow: var(--back-card-box-shadow);
     transform: scale(0.6) translateZ(-30px);
+    z-index: -1;
 
   }
   50% {
     transform: translateZ(-30px) translateX(calc(var(--card-width) / 1.3)) rotate3d(0, 0, 1, var(--card-back-rotation)) rotate3d(1, 0, 0, 20deg)  rotate3d(0, 1, 0, -10deg);
     box-shadow: var(--deck-box-shadow);
-    /* z-index: -1; */
+    z-index: -1;
   } 
   51% {
     transform: translateZ(500px) translateX(calc(var(--card-width) / 1.3)) rotate3d(0, 0, 1, var(--card-back-rotation)) rotate3d(1, 0, 0, 20deg)  rotate3d(0, 1, 0,-10deg);
-    /* z-index: 2; */
+    z-index: 999;
+    
   }
   to {
     /* z-index: 2; */
