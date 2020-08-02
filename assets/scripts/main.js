@@ -6,6 +6,9 @@ document.addEventListener('DOMContentLoaded', function(){
   const deckElem = document.getElementById('deck');
   const backCardElem = document.getElementById('back-card');
   const takenCardsContainer = document.getElementById('taken-card-container');
+  
+  calcCardSize();
+  
   deckElem.addEventListener('click', function() {
     shuffle(tarot);
     backCardElem.classList.add('animate');
@@ -20,9 +23,13 @@ document.addEventListener('DOMContentLoaded', function(){
     }, 10);
   })
 
+
+
   document.getElementById('take-card').addEventListener('click', drawCard);
 
   function drawCard() {
+    if (takenCards>2) return;
+
     takenCards++;
     var cardNumber = tarot.shift();
     var takenCard = document.createElement('div');
@@ -44,15 +51,11 @@ document.addEventListener('DOMContentLoaded', function(){
     animateElemFromTo(takenCard, deckElem, takenCardsContainer.children[takenCards - 1]);
   }
   
-  function nextCardPlacement() {
-    return (deckElem.offsetHeight + 20);
-  }
-
   function animateElemFromTo(elem, fromElem, toElem) {
     elem.style.top = `${fromElem.offsetTop}px`;
     elem.style.left = `${fromElem.offsetLeft}px`;
     toElem.style.height = `${elem.offsetHeight}px`;
-    
+
     setTimeout(() => {
       elem.getElementsByClassName('taken-card__inner')[0].style.transform = 'rotateY(180deg)';
     }, 800);
@@ -79,6 +82,14 @@ document.addEventListener('DOMContentLoaded', function(){
     }
   
     return array;
+  }
+
+  function calcCardSize() {
+    var cardWidth = window.screen.width / 3;
+    if (cardWidth > 300) cardWidth = 300;
+    document.body.style.setProperty('--card-width', `${cardWidth}px`);
+    document.body.style.setProperty('--card-height', `${cardWidth * 1.840}px`);
+    
   }
   // your code goes here
 }, false);
