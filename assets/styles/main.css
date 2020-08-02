@@ -1,0 +1,104 @@
+.container {
+  --deck-box-shadow: 5px 0 38px -10px #333;
+  --back-card-box-shadow: 5px 0 8px -10px #333;
+  --animation-timing: 0.8s;
+
+  width: 100%;
+  /* height: 100vh; */
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  align-content: center;
+}
+
+.deck {
+  max-width: 300px;
+  width: 100%;
+  background: salmon;
+  height: 500px;
+  border-radius: 5px;
+  box-shadow: var(--deck-box-shadow);
+
+}
+
+.back-card {
+  max-width: 300px;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+  background: salmon;
+  height: 500px;
+  border-radius: 5px;
+  pointer-events: none;
+}
+
+.taken-card-container {
+  display: flex;
+  /* width: 100%; */
+  flex-wrap: wrap;
+}
+
+.taken-card-container > div {
+  /* flex: 21%; explanation below */
+  /* display: inline-block; */
+  /* margin: 5px; */
+  flex: 33%;
+  display: flex;
+  /* width: 30%; */
+  max-width: 33%;
+  justify-content: center;
+  align-items: center;
+  /* height: 100px; */
+  background-color: blue;
+}
+
+.taken-card {
+  max-width: 300px;
+  width: 100%;
+  /* position: absolute; */
+  /* z-index: -1; */
+  background: salmon;
+  height: 500px;
+  border-radius: 5px;
+  pointer-events: none;
+  transition: 0.5s ease-in-out;
+  z-index: 1;
+}
+
+.animate-deck {
+  animation-iteration-count: 1;
+  animation: deckTilt var(--animation-timing) forwards;
+}
+
+.animate {
+  animation-iteration-count: 1;
+  animation: shuffle var(--animation-timing) forwards;
+}
+
+@keyframes deckTilt {
+  from {
+  }
+  50% {
+    transform: translateX(-80px) rotate3d(0, 1, 0, 40deg) rotate3d(0, 0, 1, -10deg);
+  }
+  to {
+  }
+}
+
+@keyframes shuffle {
+  from {
+    box-shadow: var(--back-card-box-shadow);
+    transform: scale(0.8);
+  }
+  50% {
+    transform: translateX(350px) rotate3d(0, 0, 1, 10deg) rotate3d(1, 0, 0, 20deg);
+    box-shadow: var(--deck-box-shadow);
+    z-index: -1;
+  } 
+  51% {
+    z-index: 1;
+  }
+  to {
+    z-index: 1;
+  }
+}
