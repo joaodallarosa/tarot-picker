@@ -8,8 +8,7 @@ body {
 
   --card-back-rotation: 20deg;
   --deck-rotation: -10deg;
-
-  --card-image: url(../img/pattern.png);
+  
 
   padding-top: 30px;
   font-family: 'Roboto', sans-serif;
@@ -28,7 +27,7 @@ body {
 .deck {
   position: relative;
   width: var(--card-width);
-  background-image: var(--card-image);
+  background-image: url(../img/pattern.png);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -52,7 +51,7 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-image: var(--card-image);
+  background-image: url(../img/pattern.png);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -80,7 +79,7 @@ body {
   height: var(--card-height);
   position: absolute;
   z-index: -1;
-  background-image: var(--card-image);
+  background-image: url(../img/pattern.png);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -135,7 +134,7 @@ body {
   color: black;
   border-radius: var(--card-border-radius);
 
-  background-image: var(--card-image);
+  background-image: url(../img/pattern.png);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
