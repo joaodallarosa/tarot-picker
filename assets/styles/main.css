@@ -1,13 +1,15 @@
 body {
   --deck-box-shadow: 5px 0 18px -10px #333;
   --back-card-box-shadow: 5px 0 8px -10px #333;
-  --animation-timing: 0.8s;
+  --animation-timing: 0.7s;
   --card-width: 300px;
   --card-height: 500px;
   --card-border-radius: 10px;
 
   --card-back-rotation: 20deg;
   --deck-rotation: -10deg;
+
+  --card-image: url(../img/pattern.png);
 
   padding-top: 30px;
   font-family: 'Roboto', sans-serif;
@@ -26,25 +28,21 @@ body {
 .deck {
   position: relative;
   width: var(--card-width);
-  background-image: url(../img/pattern.png);
+  background-image: var(--card-image);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   height: var(--card-height);
   border-radius: var(--card-border-radius);
   box-shadow: var(--deck-box-shadow);
-  /* border: solid red 2px; */
   border: none;
   transform-style: preserve-3d;
   transform: translateZ(0px);
-
-  /* z-index: 99; */
 }
 
 .deck,
 .deck::before,
 .deck::after {
-  /* Add shadow to distinguish sheets from one another */
   box-shadow: 2px 1px 1px rgba(0, 0, 0, 0.15);
 }
 
@@ -54,11 +52,10 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-image: url(../img/pattern.png);
+  background-image: var(--card-image);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  /* border: solid red 4px; */
 }
 
 /* Second sheet of deck */
@@ -83,7 +80,7 @@ body {
   height: var(--card-height);
   position: absolute;
   z-index: -1;
-  background-image: url(../img/pattern.png);
+  background-image: var(--card-image);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -117,19 +114,11 @@ body {
 
 /* This container is needed to position the front and back side */
 .taken-card__inner {
-  /* position: relative; */
   width: 100%;
   height: 100%;
-  /* text-align: center; */
-  transition: transform 0.8s;
+  transition: transform var(--animation-timing);
   transform-style: preserve-3d;
-  /* border: solid red 1px; */
 }
-
-/* Do an horizontal flip when you move the mouse over the flip box container */
-/* .taken-card:hover {
-  transform: rotateY(180deg);
-} */
 
 /* Position the front and back side */
 .taken-card__front, .taken-card__back {
@@ -146,7 +135,7 @@ body {
   color: black;
   border-radius: var(--card-border-radius);
 
-  background-image: url(../img/pattern.png);
+  background-image: var(--card-image);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -154,13 +143,11 @@ body {
 
 /* Style the back side */
 .taken-card__back {
-  /* background-image: url(../img/1.jpg); */
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
   color: white;
   border-radius: var(--card-border-radius);
-
   transform: rotateY(180deg);
 }
 
@@ -170,7 +157,6 @@ body {
   margin-left: auto;
   margin-right: auto;
   padding: 15px 30px;
-  /* background: cornsilk; */
   background: transparent;
   border: solid #333 0.20rem;
   color: #333;
@@ -217,7 +203,5 @@ body {
     z-index: 999;
     
   }
-  to {
-    /* z-index: 2; */
-  }
+  to {}
 }
